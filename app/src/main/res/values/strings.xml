@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">CathyDa_COMP304Lab2</string>
+    <string name="app_name">LeaseOrRentHome Inc.</string>
     <string name="main_enter">Enter</string>
+    <string name="apartment">Apartment</string>
+    <string name="detached">Detached Home</string>
+    <string name="semi_detached">Semi-detached Home</string>
+    <string name="condo">Condominium Apartment</string>
+    <string name="town_house">Town House</string>
 </resources>
