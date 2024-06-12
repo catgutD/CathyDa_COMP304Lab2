@@ -3,6 +3,7 @@
     <style name="Base.Theme.CathyDa_COMP304Lab2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/lightblue</item>
+        <item name="colorSecondary">@color/mint</item>
     </style>
 
     <style name="Theme.CathyDa_COMP304Lab2" parent="Base.Theme.CathyDa_COMP304Lab2" />

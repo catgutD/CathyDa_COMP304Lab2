@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LeaseOrRentHome Inc.</string>
     <string name="main_enter">Enter</string>
+    <string name="submit">Submit</string>
+
+    <string name="home_types_prompt">Select a Home Type:</string>
     <string name="apartment">Apartment</string>
     <string name="detached">Detached Home</string>
     <string name="semi_detached">Semi-detached Home</string>

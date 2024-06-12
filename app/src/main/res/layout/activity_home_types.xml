@@ -1,43 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RadioGroup
-        android:layout_width="281dp"
-        android:layout_height="232dp"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="20dp">
+        android:id="@+id/radioGroup"
+        android:layout_width="308dp"
+        android:layout_height="491dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHomeTypesPrompt">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioApartment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/apartment" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioDetachedHome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/detached" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioSemiDetached"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/semi_detached" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioCondominium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/condo" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioTownHouse"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/town_house" />
+
+        <Button
+            android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/submit" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtHomeTypesPrompt"
+        android:layout_width="309dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/home_types_prompt"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
