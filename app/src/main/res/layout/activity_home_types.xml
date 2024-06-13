@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioHomeTypes"
         android:layout_width="308dp"
         android:layout_height="491dp"
         android:layout_marginStart="32dp"
@@ -64,7 +64,7 @@
         android:layout_marginBottom="1dp"
         android:text="@string/home_types_prompt"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/radioHomeTypes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

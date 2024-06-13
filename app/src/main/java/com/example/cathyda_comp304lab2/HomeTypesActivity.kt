@@ -1,34 +1,41 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
+import android.widget.Button
+import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 
+const val EXTRA_MESSAGE ="com.android.HOMETYPE"
 class HomeTypesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_types)
-    }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        super.onCreateOptionsMenu(menu)
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu_options, menu)
-        return true
+
+        val radioHomeTypes : RadioGroup = findViewById<View>(R.id.radioHomeTypes) as RadioGroup
+        var homeType = 0
+        val btnSubmit : Button = findViewById<View>(R.id.btnSubmit) as Button
+
+
+        btnSubmit.setOnClickListener{
+            val id = radioHomeTypes.checkedRadioButtonId
+            when(id){
+                R.id.radioApartment -> homeType = 1
+                R.id.radioDetachedHome -> homeType = 2
+                R.id.radioSemiDetached -> homeType = 3
+                R.id.radioCondominium -> homeType = 4
+                R.id.radioTownHouse -> homeType = 5
+            }
+            sendHomeType(homeType)
+        }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
-            R.id.apartment -> Toast.makeText(this, "You selected Apartment!", Toast.LENGTH_LONG).show()
-            R.id.detachedhome -> Toast.makeText(this, "You selected Detached Home!", Toast.LENGTH_LONG).show()
-            R.id.semidetachedhome -> Toast.makeText(this, "You selected Semi-detached Home!", Toast.LENGTH_LONG)
-                .show()
-            R.id.condominiumapartment -> Toast.makeText(this, "You selected Condominium Apartment!", Toast.LENGTH_SHORT).show()
-            R.id.townhouse -> Toast.makeText(this, "You selected Town House!", Toast.LENGTH_LONG).show()
-            else -> return super.onOptionsItemSelected(item)
+
+    fun sendHomeType(homeType : Int) {
+        val intent = Intent(this, AvailabilityActivity::class.java).apply {
+            putExtra(EXTRA_MESSAGE, homeType)
         }
-        return true
+        startActivity(intent)
     }
 }
