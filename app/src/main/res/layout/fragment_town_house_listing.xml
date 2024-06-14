@@ -5,18 +5,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/town_house"
         tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="216dp" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frgListing"
-        android:name="com.example.cathyda_comp304lab2.ListingFragment"
-        android:layout_width="362dp"
-        android:layout_height="174dp"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="308dp" />
+        tools:layout_editor_absoluteY="163dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
