@@ -1,12 +1,41 @@
 <resources>
+    <!--Main Resources-->
     <string name="app_name">LeaseOrRentHome Inc.</string>
     <string name="main_enter">Enter</string>
     <string name="submit">Submit</string>
 
+    <!--Home Types Resources-->
     <string name="home_types_prompt">Select a Home Type:</string>
     <string name="apartment">Apartment</string>
     <string name="detached">Detached Home</string>
     <string name="semi_detached">Semi-detached Home</string>
     <string name="condo">Condominium Apartment</string>
     <string name="town_house">Town House</string>
+
+    <!--Listing Resources-->
+    <string name="price_text">Price: </string>
+    <string name="address_text">Address: </string>
+    <string name="bedrooms_text">Number of Bedrooms: </string>
+    <string name="bathrooms_text">Number of Bathrooms: </string>
+
+    <!--Apartment Resources-->
+    <string name="checkbox_apartment_prompt">View Apartment</string>
+    <string-array name="apartment_1">
+        <item>$2,000</item>
+        <item>96 Street Ave</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="apartment_2">
+        <item>$3,500</item>
+        <item>512 Long St.</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="apartment_3">
+        <item>$2,300</item>
+        <item>64 Road Ave</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
 </resources>

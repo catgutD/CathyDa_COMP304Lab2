@@ -15,11 +15,11 @@ class AvailabilityActivity : AppCompatActivity() {
         val message = intent.getIntExtra(EXTRA_MESSAGE, 0)
 
         when(message){
-            1 -> {showFragmentListing(ApartmentListingFragment())}
-            2 -> {showFragmentListing(DetachedListingFragment())}
-            3 -> {showFragmentListing(SemiDetachedListingFragment())}
-            4 -> {showFragmentListing(CondominiumListingFragment())}
-            5 -> {showFragmentListing(TownHouseListingFragment())}
+            1 -> { showFragmentListing(ApartmentListingFragment()) }
+            2 -> { showFragmentListing(DetachedListingFragment()) }
+            3 -> { showFragmentListing(SemiDetachedListingFragment()) }
+            4 -> { showFragmentListing(CondominiumListingFragment()) }
+            5 -> { showFragmentListing(TownHouseListingFragment()) }
         }
     }
 
@@ -32,11 +32,11 @@ class AvailabilityActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.getItemId()) {
-            R.id.apartment -> {showFragmentListing(ApartmentListingFragment())}
-            R.id.detachedhome -> {showFragmentListing(DetachedListingFragment())}
-            R.id.semidetachedhome -> {showFragmentListing(SemiDetachedListingFragment())}
-            R.id.condominiumapartment -> {showFragmentListing(CondominiumListingFragment())}
-            R.id.townhouse -> {showFragmentListing(TownHouseListingFragment())}
+            R.id.apartment -> { showFragmentListing(ApartmentListingFragment()) }
+            R.id.detachedhome -> { showFragmentListing(DetachedListingFragment()) }
+            R.id.semidetachedhome -> { showFragmentListing(SemiDetachedListingFragment()) }
+            R.id.condominiumapartment -> { showFragmentListing(CondominiumListingFragment()) }
+            R.id.townhouse -> { showFragmentListing(TownHouseListingFragment()) }
         }
         return true
     }
