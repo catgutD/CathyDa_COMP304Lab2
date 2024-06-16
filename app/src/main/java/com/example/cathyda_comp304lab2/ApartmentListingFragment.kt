@@ -34,6 +34,13 @@ class ApartmentListingFragment : Fragment() {
             R.id.txtBedrooms2,
             R.id.txtBathrooms2
         )
+        setApartmentInfo(
+            R.array.apartment_3,
+            R.id.txtPrice3,
+            R.id.txtAddress3,
+            R.id.txtBedrooms3,
+            R.id.txtBathrooms3
+        )
     }
     fun setApartmentInfo(apartmentId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
         val apartmentInfo: Array<String> = resources.getStringArray(apartmentId)
