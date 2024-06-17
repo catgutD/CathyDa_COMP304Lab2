@@ -12,36 +12,50 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardApartment1"
-            android:layout_width="270dp"
-            android:layout_height="185dp"
-            tools:layout_editor_absoluteX="68dp"
-            tools:layout_editor_absoluteY="29dp">
+            android:layout_width="@dimen/card_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin_top_bottom"
+            app:cardBackgroundColor="@color/peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgApartment1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_image_height"
+                    app:srcCompat="@drawable/apartment1" />
 
                 <TableLayout
                     android:id="@+id/tblApartment1"
                     android:layout_width="match_parent"
-                    android:layout_height="76dp">
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/table_side_padding"
+                    android:paddingRight="@dimen/table_side_padding">
 
                     <TableRow
-                        android:layout_width="253dp"
+                        android:layout_width="@dimen/tablerow_width"
                         android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/txtApartment1Price"
-                            android:layout_width="166dp"
+                            android:layout_width="@dimen/textbox_info_width"
                             android:layout_height="wrap_content"
-                            android:text="@string/price_text" />
+                            android:text="@string/price_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtPrice1"
-                            android:layout_width="103dp"
+                            android:layout_width="@dimen/textbox_listing_info_width"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -52,13 +66,15 @@
                             android:id="@+id/txtApartment1Address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/address_text" />
+                            android:text="@string/address_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtAddress1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -69,13 +85,15 @@
                             android:id="@+id/txtApartment1Bedrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bedrooms_text" />
+                            android:text="@string/bedrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBedrooms1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -86,13 +104,15 @@
                             android:id="@+id/txtApartment1Bathrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bathrooms_text" />
+                            android:text="@string/bathrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBathrooms1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
                 </TableLayout>
 
@@ -101,43 +121,57 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/checkbox_apartment_prompt" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardApartment2"
-            android:layout_width="270dp"
-            android:layout_height="185dp"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/cardApartment1"
-            tools:layout_editor_absoluteX="71dp">
+            app:cardBackgroundColor="@color/lightgreen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardApartment1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgApartment2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_image_height"
+                    app:srcCompat="@drawable/apartment2" />
 
                 <TableLayout
                     android:id="@+id/tblApartment2"
-                    android:layout_width="269dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/table_side_padding"
+                    android:paddingRight="@dimen/table_side_padding">
 
                     <TableRow
-                        android:layout_width="253dp"
+                        android:layout_width="@dimen/tablerow_width"
                         android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/txtApartment2Price"
-                            android:layout_width="166dp"
+                            android:layout_width="@dimen/textbox_info_width"
                             android:layout_height="wrap_content"
-                            android:text="@string/price_text" />
+                            android:text="@string/price_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtPrice2"
-                            android:layout_width="103dp"
+                            android:layout_width="@dimen/textbox_listing_info_width"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -148,13 +182,15 @@
                             android:id="@+id/txtApartment2Address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/address_text" />
+                            android:text="@string/address_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtAddress2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -165,13 +201,15 @@
                             android:id="@+id/txtApartment2Bedrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bedrooms_text" />
+                            android:text="@string/bedrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBedrooms2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -182,13 +220,15 @@
                             android:id="@+id/txtApartment2Bathrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bathrooms_text" />
+                            android:text="@string/bathrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBathrooms2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
                 </TableLayout>
 
@@ -203,37 +243,52 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardApartment3"
-            android:layout_width="274dp"
-            android:layout_height="243dp"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/cardApartment2"
-            tools:layout_editor_absoluteX="71dp">
+            android:layout_marginBottom="@dimen/card_margin_top_bottom"
+            app:cardBackgroundColor="@color/mint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardApartment2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgApartment3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_image_height"
+                    app:srcCompat="@drawable/apartment3" />
 
                 <TableLayout
                     android:id="@+id/tblApartment3"
-                    android:layout_width="269dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/table_side_padding"
+                    android:paddingRight="@dimen/table_side_padding">
 
                     <TableRow
-                        android:layout_width="253dp"
+                        android:layout_width="@dimen/tablerow_width"
                         android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/txtApartment3Price"
-                            android:layout_width="166dp"
+                            android:layout_width="@dimen/textbox_info_width"
                             android:layout_height="wrap_content"
-                            android:text="@string/price_text" />
+                            android:text="@string/price_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtPrice3"
-                            android:layout_width="103dp"
+                            android:layout_width="@dimen/textbox_listing_info_width"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -244,13 +299,15 @@
                             android:id="@+id/txtApartment3Address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/address_text" />
+                            android:text="@string/address_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtAddress3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -261,13 +318,15 @@
                             android:id="@+id/txtApartment3Bedrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bedrooms_text" />
+                            android:text="@string/bedrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBedrooms3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
 
                     <TableRow
@@ -278,13 +337,15 @@
                             android:id="@+id/txtApartment3Bathrooms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/bathrooms_text" />
+                            android:text="@string/bathrooms_text"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/txtBathrooms3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd" />
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black" />
                     </TableRow>
                 </TableLayout>
 

@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="radio_button_height">80dp</dimen>
+
+    <!--Listing Dimensions-->
+    <dimen name="table_side_padding">10dp</dimen>
+    <dimen name="card_image_height">200dp</dimen>
+    <dimen name="card_width">270dp</dimen>
+    <dimen name="card_margin_top_bottom">10dp</dimen>
+    <dimen name="tablerow_width">253dp</dimen>
+    <dimen name="textbox_info_width">140dp</dimen>
+    <dimen name="textbox_listing_info_width">110dp</dimen>
 </resources>

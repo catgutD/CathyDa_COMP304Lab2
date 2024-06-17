@@ -13,10 +13,11 @@
     <string name="town_house">Town House</string>
 
     <!--Listing Resources-->
-    <string name="price_text">Price: </string>
-    <string name="address_text">Address: </string>
-    <string name="bedrooms_text">Number of Bedrooms: </string>
-    <string name="bathrooms_text">Number of Bathrooms: </string>
+    <string name="price_text">Price:</string>
+    <string name="address_text">Address:</string>
+    <string name="bedrooms_text">Bedrooms:</string>
+    <string name="bathrooms_text">Bathrooms:</string>
+    <string name="checkout_text">Checkout</string>
 
     <!--Apartment Resources-->
     <string name="checkbox_apartment_prompt">View Apartment</string>
@@ -38,4 +39,28 @@
         <item>1</item>
         <item>1</item>
     </string-array>
+
+    <!--Detached Home Resources -->
+    <string name="checkbox_detached_prompt">View Detached Home</string>
+    <string-array name="detached_home_1">
+        <item>$6,800</item>
+        <item>342 Avenue Rd</item>
+        <item>3</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="detached_home_2">
+        <item>$4,300</item>
+        <item>346 Street Cr</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="detached_home_3">
+        <item>$8,500</item>
+        <item>785 Crescent Dr</item>
+        <item>4</item>
+        <item>1</item>
+    </string-array>
+
+    <!--Semi-Detached Home Resources-->
+
 </resources>

@@ -5,7 +5,6 @@
         <item name="colorPrimary">@color/lightblue</item>
         <item name="colorSecondary">@color/mint</item>
         <item name="colorTertiary">@color/lightgreen</item>
-        <item name="colorAccent">@color/peach</item>
     </style>
 
     <style name="Theme.CathyDa_COMP304Lab2" parent="Base.Theme.CathyDa_COMP304Lab2" />
