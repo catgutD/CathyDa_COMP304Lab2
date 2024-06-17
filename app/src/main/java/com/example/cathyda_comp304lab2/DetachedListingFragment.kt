@@ -19,21 +19,21 @@ class DetachedListingFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        setApartmentInfo(
+        setDetachedInfo(
             R.array.detached_home_1,
             R.id.txtPrice1,
             R.id.txtAddress1,
             R.id.txtBedrooms1,
             R.id.txtBathrooms1
         )
-        setApartmentInfo(
+        setDetachedInfo(
             R.array.detached_home_2,
             R.id.txtPrice2,
             R.id.txtAddress2,
             R.id.txtBedrooms2,
             R.id.txtBathrooms2
         )
-        setApartmentInfo(
+        setDetachedInfo(
             R.array.detached_home_3,
             R.id.txtPrice3,
             R.id.txtAddress3,
@@ -41,7 +41,7 @@ class DetachedListingFragment : Fragment() {
             R.id.txtBathrooms3
         )
     }
-    fun setApartmentInfo(detachedId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
+    fun setDetachedInfo(detachedId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
         val detachedInfo: Array<String> = resources.getStringArray(detachedId)
 
         val price: String = detachedInfo[0]

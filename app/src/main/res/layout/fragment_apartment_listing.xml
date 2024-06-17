@@ -120,7 +120,7 @@
                     android:id="@+id/chbxApartment1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_apartment_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
 
             </LinearLayout>
 
@@ -236,7 +236,7 @@
                     android:id="@+id/chbxApartment2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_apartment_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -353,7 +353,7 @@
                     android:id="@+id/chbxApartment3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_apartment_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

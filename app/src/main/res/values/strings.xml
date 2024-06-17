@@ -18,9 +18,9 @@
     <string name="bedrooms_text">Bedrooms:</string>
     <string name="bathrooms_text">Bathrooms:</string>
     <string name="checkout_text">Checkout</string>
+    <string name="checkbox_listing_prompt">View</string>
 
     <!--Apartment Resources-->
-    <string name="checkbox_apartment_prompt">View Apartment</string>
     <string-array name="apartment_1">
         <item>$2,000</item>
         <item>96 Street Ave</item>
@@ -41,7 +41,6 @@
     </string-array>
 
     <!--Detached Home Resources -->
-    <string name="checkbox_detached_prompt">View Detached Home</string>
     <string-array name="detached_home_1">
         <item>$6,800</item>
         <item>342 Avenue Rd</item>
@@ -62,5 +61,35 @@
     </string-array>
 
     <!--Semi-Detached Home Resources-->
+    <string-array name="semi_detached_1">
 
+    </string-array>
+    <string-array name="semi_detached_2">
+
+    </string-array>
+    <string-array name="semi_detached_3">
+
+    </string-array>
+
+    <!--Condominium Apartment Resources-->
+    <string-array name="condo_1">
+
+    </string-array>
+    <string-array name="condo_2">
+
+    </string-array>
+    <string-array name="condo_3">
+
+    </string-array>
+
+    <!--Town Houses Resources-->
+    <string-array name="town_house_1">
+
+    </string-array>
+    <string-array name="town_house_2">
+
+    </string-array>
+    <string-array name="town_house_3">
+
+    </string-array>
 </resources>

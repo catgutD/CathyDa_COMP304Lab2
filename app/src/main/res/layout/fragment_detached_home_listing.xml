@@ -120,7 +120,7 @@
                     android:id="@+id/chbxDetached1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_detached_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -235,7 +235,7 @@
                     android:id="@+id/chbxDetached2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_detached_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -352,7 +352,7 @@
                     android:id="@+id/chbxDetached3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/checkbox_detached_prompt" />
+                    android:text="@string/checkbox_listing_prompt" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
