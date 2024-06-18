@@ -1,8 +1,11 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
@@ -20,6 +23,12 @@ class AvailabilityActivity : AppCompatActivity() {
             3 -> { showFragmentListing(SemiDetachedListingFragment()) }
             4 -> { showFragmentListing(CondominiumListingFragment()) }
             5 -> { showFragmentListing(TownHouseListingFragment()) }
+        }
+
+        val btnCheckout: Button = findViewById<View>(R.id.btnCheckOut) as Button
+        btnCheckout.setOnClickListener{
+            val intent = Intent(this, CheckoutActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -46,4 +55,5 @@ class AvailabilityActivity : AppCompatActivity() {
             .replace(R.id.frgListing, fragmentView)
             .commit()
     }
+
 }
