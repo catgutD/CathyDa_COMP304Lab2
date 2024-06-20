@@ -20,6 +20,11 @@
     <string name="checkout_text">Checkout</string>
     <string name="checkbox_listing_prompt">View</string>
 
+    <!--Checkout Resources-->
+    <string name="select_button">Select</string>
+    <string name="proceed_button">Proceed</string>
+
+    <!--Home Info-->
     <!--Apartment Resources-->
     <string-array name="apartment_1">
         <item>$2,000</item>

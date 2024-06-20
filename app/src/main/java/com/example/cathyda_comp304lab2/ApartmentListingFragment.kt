@@ -61,22 +61,22 @@ class ApartmentListingFragment : Fragment() {
 
         chkApartment1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                editor.putBoolean("apartment1", true)
+                editor.putBoolean("apartment_1", true)
                     .apply()
             }
             else{
-                editor.remove("apartment1")
+                editor.remove("apartment_1")
                     .apply()
             }
         }
 
         chkApartment2?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkApartment2.isChecked){
-                editor.putBoolean("apartment2", true)
+                editor.putBoolean("apartment_2", true)
                     .apply()
             }
             else{
-                editor.remove("apartment2")
+                editor.remove("apartment_2")
                     .apply()
             }
         }
@@ -124,8 +124,8 @@ class ApartmentListingFragment : Fragment() {
     }
 
     fun loadCheckedApartment(sharedPreferences : SharedPreferences){
-        if(sharedPreferences.contains("apartment1")){ view?.findViewById<CheckBox>(R.id.chbxApartment1)?.isChecked = true }
-        if(sharedPreferences.contains("apartment2")){ view?.findViewById<CheckBox>(R.id.chbxApartment2)?.isChecked = true }
+        if(sharedPreferences.contains("apartment_1")){ view?.findViewById<CheckBox>(R.id.chbxApartment1)?.isChecked = true }
+        if(sharedPreferences.contains("apartment_2")){ view?.findViewById<CheckBox>(R.id.chbxApartment2)?.isChecked = true }
         if(sharedPreferences.contains("apartment3")){ view?.findViewById<CheckBox>(R.id.chbxApartment3)?.isChecked = true }
     }
 }
