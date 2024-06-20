@@ -1,20 +1,27 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.ShareActionProvider
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class SemiDetachedListingFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_semi_detached_home_listing, container, false)
+
         return view
+
     }
     override fun onStart() {
         super.onStart()
@@ -40,7 +47,54 @@ class SemiDetachedListingFragment : Fragment() {
             R.id.txtBedrooms3,
             R.id.txtBathrooms3
         )
+
+        val chksemiDetached1 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached1)
+        val chksemiDetached2 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached2)
+        val chksemiDetached3 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached3)
+
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        loadCheckedSemiDetached(sharedPreferences)
+
+        val editor = sharedPreferences.edit()
+
+        chksemiDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                editor.putBoolean("semiDetached1", true)
+                    .apply()
+            }
+            else{
+                editor.remove("semiDetached1")
+                      .apply()
+
+            }
+        }
+
+        chksemiDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chksemiDetached2.isChecked){
+                editor.putBoolean("semiDetached2", true)
+                      .apply()
+            }
+            else{
+                editor.remove("semiDetached2")
+                      .apply()
+
+            }
+        }
+
+        chksemiDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chksemiDetached3.isChecked){
+                editor.putBoolean("semiDetached3", true)
+                      .apply()
+            }
+            else{
+                editor.remove("semiDetached3")
+                      .apply()
+
+            }
+        }
     }
+
     fun setDetachedInfo(semiDetachedId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
         val semiDetachedInfo: Array<String> = resources.getStringArray(semiDetachedId)
 
@@ -59,5 +113,11 @@ class SemiDetachedListingFragment : Fragment() {
         val bathrooms: String = semiDetachedInfo[3]
         val bathroomsView: TextView? = view?.findViewById(bathroomId)
         bathroomsView?.text = bathrooms
+    }
+
+    fun loadCheckedSemiDetached(sharedPreferences : SharedPreferences){
+        if(sharedPreferences.contains("semiDetached1")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached1)?.isChecked = true }
+        if(sharedPreferences.contains("semiDetached2")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached2)?.isChecked = true }
+        if(sharedPreferences.contains("semiDetached3")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached3)?.isChecked = true }
     }
 }
