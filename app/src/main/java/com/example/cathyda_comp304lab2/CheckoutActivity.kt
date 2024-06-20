@@ -11,18 +11,24 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class CheckoutActivity : AppCompatActivity() {
+    val listingsList = ArrayList<String>()
+    lateinit var customAdapter: CustomAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
-    }
 
-    override fun onStart() {
-        super.onStart()
-        setSelectedHomes()
+        val recyclerView: RecyclerView = findViewById(R.id.recycleListing)
+        customAdapter = CustomAdapter(listingsList, applicationContext)
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareHomes()
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
@@ -48,70 +54,13 @@ class CheckoutActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun setSelectedHomes(){
+    fun prepareHomes() {
+        val initialSize = listingsList.size
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         val homes = sharedPreferences.all
 
-        var homeTyped: Int
-        var priceTyped: Int
-        var addressTyped: Int
-        var bedroomTyped: Int
-        var bathroomTyped: Int
-        var imageTyped: Int
+        for (home in homes.keys){ listingsList.add(home) }
 
-        var cardTyped: Int
-
-        //counter
-        var i = 1
-
-        for (home in homes.keys){
-
-            homeTyped = resources.getIdentifier(home,"array", applicationContext.packageName)
-            priceTyped = resources.getIdentifier("txtPrice$i", "id", applicationContext.packageName)
-            addressTyped = resources.getIdentifier("txtAddress$i", "id", applicationContext.packageName)
-            bedroomTyped = resources.getIdentifier("txtBedrooms$i", "id", applicationContext.packageName)
-            bathroomTyped = resources.getIdentifier("txtBathrooms$i", "id", applicationContext.packageName)
-            imageTyped = resources.getIdentifier("imgListing$i","id", applicationContext.packageName)
-
-            setListingInfo(homeTyped, priceTyped, addressTyped, bedroomTyped, bathroomTyped, imageTyped)
-
-            cardTyped = resources.getIdentifier("cardListing$i","id",applicationContext.packageName)
-            val cardView: CardView = findViewById(cardTyped)
-
-            cardView.isVisible = true
-
-            i += 1
-        }
-    }
-
-    fun setListingInfo (listingId: Int,
-                        priceId: Int,
-                        addressId: Int,
-                        bedroomId: Int,
-                        bathroomId: Int,
-                        imageId: Int)
-    {
-        val listingInfo: Array<String> = resources.getStringArray(listingId)
-
-        val price: String = listingInfo[0]
-        val priceView: TextView = findViewById(priceId)
-        priceView.text = price
-
-        val address: String = listingInfo[1]
-        val addressView: TextView = findViewById(addressId)
-        addressView.text = address
-
-        val bedrooms: String = listingInfo[2]
-        val bedroomsView: TextView = findViewById(bedroomId)
-        bedroomsView.text = bedrooms
-
-        val bathrooms: String = listingInfo[3]
-        val bathroomsView: TextView = findViewById(bathroomId)
-        bathroomsView.text = bathrooms
-
-        //retrieving array as a TypedArray for the image resource
-        val image: TypedArray = resources.obtainTypedArray(listingId)
-        val imageView: ImageView = findViewById(imageId)
-        imageView.setImageResource(image.getResourceId(4,0))
+        customAdapter.notifyItemRangeInserted(initialSize, listingsList.size - initialSize)
     }
 }

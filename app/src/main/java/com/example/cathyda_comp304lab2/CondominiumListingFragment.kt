@@ -61,33 +61,33 @@ class CondominiumListingFragment : Fragment() {
 
         chkCondominium1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                editor.putBoolean("condo1", true)
+                editor.putBoolean("condo_1", true)
                     .apply()
             }
             else{
-                editor.remove("condo1")
+                editor.remove("condo_1")
                     .apply()
             }
         }
 
         chkCondominium2?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkCondominium2.isChecked){
-                editor.putBoolean("condo2", true)
+                editor.putBoolean("condo_2", true)
                     .apply()
             }
             else{
-                editor.remove("condo2")
+                editor.remove("condo_2")
                     .apply()
             }
         }
 
         chkCondominium3?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkCondominium3.isChecked){
-                editor.putBoolean("condo3", true)
+                editor.putBoolean("condo_3", true)
                     .apply()
             }
             else{
-                editor.remove("condo3")
+                editor.remove("condo_3")
                     .apply()
             }
         }
@@ -124,8 +124,8 @@ class CondominiumListingFragment : Fragment() {
     }
 
     fun loadCheckedCondominium(sharedPreferences : SharedPreferences){
-        if(sharedPreferences.contains("condo1")){ view?.findViewById<CheckBox>(R.id.chbxCondo1)?.isChecked = true }
-        if(sharedPreferences.contains("condo2")){ view?.findViewById<CheckBox>(R.id.chbxCondo2)?.isChecked = true }
-        if(sharedPreferences.contains("condo3")){ view?.findViewById<CheckBox>(R.id.chbxCondo3)?.isChecked = true }
+        if(sharedPreferences.contains("condo_1")){ view?.findViewById<CheckBox>(R.id.chbxCondo1)?.isChecked = true }
+        if(sharedPreferences.contains("condo_2")){ view?.findViewById<CheckBox>(R.id.chbxCondo2)?.isChecked = true }
+        if(sharedPreferences.contains("condo_3")){ view?.findViewById<CheckBox>(R.id.chbxCondo3)?.isChecked = true }
     }
 }

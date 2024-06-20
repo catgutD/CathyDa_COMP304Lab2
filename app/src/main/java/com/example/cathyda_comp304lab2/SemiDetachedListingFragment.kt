@@ -63,33 +63,33 @@ class SemiDetachedListingFragment : Fragment() {
 
         chkSemiDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                editor.putBoolean("semiDetached1", true)
+                editor.putBoolean("semi_detached_1", true)
                     .apply()
             }
             else{
-                editor.remove("semiDetached1")
+                editor.remove("semi_detached_1")
                       .apply()
             }
         }
 
         chkSemiDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkSemiDetached2.isChecked){
-                editor.putBoolean("semiDetached2", true)
+                editor.putBoolean("semi_detached_2", true)
                       .apply()
             }
             else{
-                editor.remove("semiDetached2")
+                editor.remove("semi_detached_2")
                       .apply()
             }
         }
 
         chkSemiDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkSemiDetached3.isChecked){
-                editor.putBoolean("semiDetached3", true)
+                editor.putBoolean("semi_detached_3", true)
                       .apply()
             }
             else{
-                editor.remove("semiDetached3")
+                editor.remove("semi_detached_3")
                       .apply()
             }
         }
@@ -126,8 +126,8 @@ class SemiDetachedListingFragment : Fragment() {
     }
 
     fun loadCheckedSemiDetached(sharedPreferences : SharedPreferences){
-        if(sharedPreferences.contains("semiDetached1")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached1)?.isChecked = true }
-        if(sharedPreferences.contains("semiDetached2")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached2)?.isChecked = true }
-        if(sharedPreferences.contains("semiDetached3")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached3)?.isChecked = true }
+        if(sharedPreferences.contains("semi_detached_1")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached1)?.isChecked = true }
+        if(sharedPreferences.contains("semi_detached_2")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached2)?.isChecked = true }
+        if(sharedPreferences.contains("semi_detached_3")){ view?.findViewById<CheckBox>(R.id.chbxSemiDetached3)?.isChecked = true }
     }
 }

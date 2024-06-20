@@ -61,33 +61,33 @@ class DetachedListingFragment : Fragment() {
 
         chkDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                editor.putBoolean("detached1", true)
+                editor.putBoolean("detached_home_1", true)
                     .apply()
             }
             else{
-                editor.remove("detached1")
+                editor.remove("detached_home_1")
                     .apply()
             }
         }
 
         chkDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkDetached2.isChecked){
-                editor.putBoolean("detached2", true)
+                editor.putBoolean("detached_home_2", true)
                     .apply()
             }
             else{
-                editor.remove("detached2")
+                editor.remove("detached_home_2")
                     .apply()
             }
         }
 
         chkDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkDetached3.isChecked){
-                editor.putBoolean("detached3", true)
+                editor.putBoolean("detached_home_3", true)
                     .apply()
             }
             else{
-                editor.remove("detached3")
+                editor.remove("detached_home_3")
                     .apply()
             }
         }
@@ -124,8 +124,8 @@ class DetachedListingFragment : Fragment() {
     }
 
     fun loadCheckedDetached(sharedPreferences : SharedPreferences){
-        if(sharedPreferences.contains("detached1")){ view?.findViewById<CheckBox>(R.id.chbxDetached1)?.isChecked = true }
-        if(sharedPreferences.contains("detached2")){ view?.findViewById<CheckBox>(R.id.chbxDetached2)?.isChecked = true }
-        if(sharedPreferences.contains("detached3")){ view?.findViewById<CheckBox>(R.id.chbxDetached3)?.isChecked = true }
+        if(sharedPreferences.contains("detached_home_1")){ view?.findViewById<CheckBox>(R.id.chbxDetached1)?.isChecked = true }
+        if(sharedPreferences.contains("detached_home_2")){ view?.findViewById<CheckBox>(R.id.chbxDetached2)?.isChecked = true }
+        if(sharedPreferences.contains("detached_home_3")){ view?.findViewById<CheckBox>(R.id.chbxDetached3)?.isChecked = true }
     }
 }

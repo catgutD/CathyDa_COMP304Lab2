@@ -63,33 +63,33 @@ class TownHouseListingFragment : Fragment() {
 
         chkTownHouse1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
-                editor.putBoolean("townHouse1", true)
+                editor.putBoolean("town_house_1", true)
                     .apply()
             }
             else{
-                editor.remove("townHouse1")
+                editor.remove("town_house_1")
                     .apply()
             }
         }
 
         chkTownHouse2?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkTownHouse2.isChecked){
-                editor.putBoolean("townHouse2", true)
+                editor.putBoolean("town_house_2", true)
                     .apply()
             }
             else{
-                editor.remove("townHouse2")
+                editor.remove("town_house_2")
                     .apply()
             }
         }
 
         chkTownHouse3?.setOnCheckedChangeListener { buttonView, isChecked ->
             if(chkTownHouse3.isChecked){
-                editor.putBoolean("townHouse3", true)
+                editor.putBoolean("town_house_3", true)
                     .apply()
             }
             else{
-                editor.remove("townHouse3")
+                editor.remove("town_house_3")
                     .apply()
             }
         }
@@ -126,8 +126,8 @@ class TownHouseListingFragment : Fragment() {
     }
 
     fun loadCheckedTownHouse(sharedPreferences : SharedPreferences){
-        if(sharedPreferences.contains("townHouse1")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse1)?.isChecked = true }
-        if(sharedPreferences.contains("townHouse2")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse2)?.isChecked = true }
-        if(sharedPreferences.contains("townHouse3")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse3)?.isChecked = true }
+        if(sharedPreferences.contains("town_house_1")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse1)?.isChecked = true }
+        if(sharedPreferences.contains("town_house_2")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse2)?.isChecked = true }
+        if(sharedPreferences.contains("town_house_3")){ view?.findViewById<CheckBox>(R.id.chbxTownHouse3)?.isChecked = true }
     }
 }
