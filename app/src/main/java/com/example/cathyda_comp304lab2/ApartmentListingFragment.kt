@@ -1,9 +1,12 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -41,7 +44,53 @@ class ApartmentListingFragment : Fragment() {
             R.id.txtBedrooms3,
             R.id.txtBathrooms3
         )
+        val chkApartment1 : CheckBox? = view?.findViewById(R.id.chbxApartment1)
+        val chkApartment2 : CheckBox? = view?.findViewById(R.id.chbxApartment2)
+        val chkApartment3 : CheckBox? = view?.findViewById(R.id.chbxApartment3)
+
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        loadCheckedApartment(sharedPreferences)
+
+        val editor = sharedPreferences.edit()
+
+        chkApartment1?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                editor.putBoolean("apartment1", true)
+                    .apply()
+            }
+            else{
+                editor.remove("apartment1")
+                    .apply()
+
+            }
+        }
+
+        chkApartment2?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkApartment2.isChecked){
+                editor.putBoolean("apartment2", true)
+                    .apply()
+            }
+            else{
+                editor.remove("apartment2")
+                    .apply()
+
+            }
+        }
+
+        chkApartment3?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkApartment3.isChecked){
+                editor.putBoolean("apartment3", true)
+                    .apply()
+            }
+            else{
+                editor.remove("apartment3")
+                    .apply()
+
+            }
+        }
     }
+
     fun setApartmentInfo(apartmentId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
         val apartmentInfo: Array<String> = resources.getStringArray(apartmentId)
 
@@ -60,5 +109,11 @@ class ApartmentListingFragment : Fragment() {
         val bathrooms: String = apartmentInfo[3]
         val bathroomsView: TextView? = view?.findViewById(bathroomId)
         bathroomsView?.text = bathrooms
+    }
+
+    fun loadCheckedApartment(sharedPreferences : SharedPreferences){
+        if(sharedPreferences.contains("apartment1")){ view?.findViewById<CheckBox>(R.id.chbxApartment1)?.isChecked = true }
+        if(sharedPreferences.contains("apartment2")){ view?.findViewById<CheckBox>(R.id.chbxApartment2)?.isChecked = true }
+        if(sharedPreferences.contains("apartment3")){ view?.findViewById<CheckBox>(R.id.chbxApartment3)?.isChecked = true }
     }
 }

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.ShareActionProvider
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -19,7 +18,6 @@ class SemiDetachedListingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_semi_detached_home_listing, container, false)
-
         return view
 
     }
@@ -48,9 +46,9 @@ class SemiDetachedListingFragment : Fragment() {
             R.id.txtBathrooms3
         )
 
-        val chksemiDetached1 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached1)
-        val chksemiDetached2 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached2)
-        val chksemiDetached3 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached3)
+        val chkSemiDetached1 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached1)
+        val chkSemiDetached2 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached2)
+        val chkSemiDetached3 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached3)
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
@@ -58,7 +56,7 @@ class SemiDetachedListingFragment : Fragment() {
 
         val editor = sharedPreferences.edit()
 
-        chksemiDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
+        chkSemiDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
                 editor.putBoolean("semiDetached1", true)
                     .apply()
@@ -70,8 +68,8 @@ class SemiDetachedListingFragment : Fragment() {
             }
         }
 
-        chksemiDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(chksemiDetached2.isChecked){
+        chkSemiDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkSemiDetached2.isChecked){
                 editor.putBoolean("semiDetached2", true)
                       .apply()
             }
@@ -82,8 +80,8 @@ class SemiDetachedListingFragment : Fragment() {
             }
         }
 
-        chksemiDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(chksemiDetached3.isChecked){
+        chkSemiDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkSemiDetached3.isChecked){
                 editor.putBoolean("semiDetached3", true)
                       .apply()
             }

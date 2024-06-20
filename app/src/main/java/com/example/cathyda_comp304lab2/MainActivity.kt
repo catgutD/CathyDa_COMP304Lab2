@@ -2,6 +2,7 @@ package com.example.cathyda_comp304lab2
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,12 @@ class MainActivity : AppCompatActivity() {
         btnEnter.setOnClickListener{
                 val intent = Intent(this, HomeTypesActivity::class.java)
                 startActivity(intent)
+
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+
+            val editor = sharedPreferences.edit()
+            editor.clear()
+                  .commit()
         }
-
     }
-
 }

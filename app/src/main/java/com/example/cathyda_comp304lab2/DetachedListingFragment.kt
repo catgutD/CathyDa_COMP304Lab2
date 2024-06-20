@@ -1,9 +1,12 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -40,7 +43,54 @@ class DetachedListingFragment : Fragment() {
             R.id.txtBedrooms3,
             R.id.txtBathrooms3
         )
+
+        val chkDetached1 : CheckBox? = view?.findViewById(R.id.chbxDetached1)
+        val chkDetached2 : CheckBox? = view?.findViewById(R.id.chbxDetached2)
+        val chkDetached3 : CheckBox? = view?.findViewById(R.id.chbxDetached3)
+
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        loadCheckedDetached(sharedPreferences)
+
+        val editor = sharedPreferences.edit()
+
+        chkDetached1?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                editor.putBoolean("detached1", true)
+                    .apply()
+            }
+            else{
+                editor.remove("detached1")
+                    .apply()
+
+            }
+        }
+
+        chkDetached2?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkDetached2.isChecked){
+                editor.putBoolean("detached2", true)
+                    .apply()
+            }
+            else{
+                editor.remove("detached2")
+                    .apply()
+
+            }
+        }
+
+        chkDetached3?.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(chkDetached3.isChecked){
+                editor.putBoolean("detached3", true)
+                    .apply()
+            }
+            else{
+                editor.remove("detached3")
+                    .apply()
+
+            }
+        }
     }
+
     fun setDetachedInfo(detachedId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
         val detachedInfo: Array<String> = resources.getStringArray(detachedId)
 
@@ -59,5 +109,11 @@ class DetachedListingFragment : Fragment() {
         val bathrooms: String = detachedInfo[3]
         val bathroomsView: TextView? = view?.findViewById(bathroomId)
         bathroomsView?.text = bathrooms
+    }
+
+    fun loadCheckedDetached(sharedPreferences : SharedPreferences){
+        if(sharedPreferences.contains("detached1")){ view?.findViewById<CheckBox>(R.id.chbxDetached1)?.isChecked = true }
+        if(sharedPreferences.contains("detached2")){ view?.findViewById<CheckBox>(R.id.chbxDetached2)?.isChecked = true }
+        if(sharedPreferences.contains("detached3")){ view?.findViewById<CheckBox>(R.id.chbxDetached3)?.isChecked = true }
     }
 }
