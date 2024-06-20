@@ -26,18 +26,21 @@
         <item>96 Street Ave</item>
         <item>0</item>
         <item>1</item>
+        <item>@drawable/apartment1</item>
     </string-array>
     <string-array name="apartment_2">
         <item>$3,500</item>
         <item>512 Long St.</item>
         <item>2</item>
         <item>1</item>
+        <item>@drawable/apartment2</item>
     </string-array>
     <string-array name="apartment_3">
         <item>$2,300</item>
         <item>64 Road Ave</item>
         <item>1</item>
         <item>1</item>
+        <item>@drawable/apartment3</item>
     </string-array>
 
     <!--Detached Home Resources -->
@@ -46,18 +49,21 @@
         <item>342 Avenue Rd</item>
         <item>3</item>
         <item>2</item>
+        <item>@drawable/detached1</item>
     </string-array>
     <string-array name="detached_home_2">
         <item>$4,300</item>
         <item>346 Street Cr</item>
         <item>2</item>
         <item>1</item>
+        <item>@drawable/detached2</item>
     </string-array>
     <string-array name="detached_home_3">
         <item>$8,500</item>
         <item>785 Crescent Dr</item>
         <item>4</item>
         <item>1</item>
+        <item>@drawable/detached3</item>
     </string-array>
 
     <!--Semi-Detached Home Resources-->
@@ -66,18 +72,21 @@
         <item>864 Avenue St</item>
         <item>2</item>
         <item>1</item>
+        <item>@drawable/semidetached1</item>
     </string-array>
     <string-array name="semi_detached_2">
         <item>$5,600</item>
         <item>74 Crescent St</item>
         <item>3</item>
         <item>1</item>
+        <item>@drawable/semidetached2</item>
     </string-array>
     <string-array name="semi_detached_3">
         <item>$4,500</item>
         <item>746 Long Dr</item>
         <item>2</item>
         <item>2</item>
+        <item>@drawable/semidetached3</item>
     </string-array>
 
     <!--Condominium Apartment Resources-->
@@ -86,18 +95,21 @@
         <item>54 Road St</item>
         <item>2</item>
         <item>1</item>
+        <item>@drawable/condo1</item>
     </string-array>
     <string-array name="condo_2">
         <item>$5,700</item>
         <item>635 Avenue Sq</item>
         <item>3</item>
         <item>1</item>
+        <item>@drawable/condo2</item>
     </string-array>
     <string-array name="condo_3">
         <item>$2,900</item>
         <item>7 Street Blvd</item>
         <item>1</item>
         <item>1</item>
+        <item>@drawable/condo3</item>
     </string-array>
 
     <!--Town Houses Resources-->
@@ -106,17 +118,20 @@
         <item>89 Square Dr</item>
         <item>3</item>
         <item>1</item>
+        <item>@drawable/townhouse1</item>
     </string-array>
     <string-array name="town_house_2">
         <item>$8,700</item>
         <item>456 Queen Ave</item>
         <item>4</item>
         <item>2</item>
+        <item>@drawable/townhouse2</item>
     </string-array>
     <string-array name="town_house_3">
         <item>$7,100</item>
         <item>896 King Blvd</item>
         <item>3</item>
         <item>2</item>
+        <item>@drawable/townhouse3</item>
     </string-array>
 </resources>

@@ -29,8 +29,7 @@
                 <ImageView
                     android:id="@+id/imgTownHouse1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/townhouse1" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblTownHouse1"
@@ -145,8 +144,7 @@
                 <ImageView
                     android:id="@+id/imgTownHouse2"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/townhouse2" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblTownHouse2"
@@ -262,8 +260,7 @@
                 <ImageView
                     android:id="@+id/imgTownHouse3"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/townhouse3" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblTownHouse3"

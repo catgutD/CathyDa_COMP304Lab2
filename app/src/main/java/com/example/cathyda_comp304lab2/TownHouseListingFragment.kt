@@ -1,12 +1,14 @@
 package com.example.cathyda_comp304lab2
 
 import android.content.SharedPreferences
+import android.content.res.TypedArray
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -29,21 +31,24 @@ class TownHouseListingFragment : Fragment() {
             R.id.txtPrice1,
             R.id.txtAddress1,
             R.id.txtBedrooms1,
-            R.id.txtBathrooms1
+            R.id.txtBathrooms1,
+            R.id.imgTownHouse1
         )
         setTownHouseInfo(
             R.array.town_house_2,
             R.id.txtPrice2,
             R.id.txtAddress2,
             R.id.txtBedrooms2,
-            R.id.txtBathrooms2
+            R.id.txtBathrooms2,
+            R.id.imgTownHouse2
         )
         setTownHouseInfo(
             R.array.town_house_3,
             R.id.txtPrice3,
             R.id.txtAddress3,
             R.id.txtBedrooms3,
-            R.id.txtBathrooms3
+            R.id.txtBathrooms3,
+            R.id.imgTownHouse3
         )
 
         val chkTownHouse1 : CheckBox? = view?.findViewById(R.id.chbxTownHouse1)
@@ -64,7 +69,6 @@ class TownHouseListingFragment : Fragment() {
             else{
                 editor.remove("townHouse1")
                     .apply()
-
             }
         }
 
@@ -76,7 +80,6 @@ class TownHouseListingFragment : Fragment() {
             else{
                 editor.remove("townHouse2")
                     .apply()
-
             }
         }
 
@@ -88,12 +91,16 @@ class TownHouseListingFragment : Fragment() {
             else{
                 editor.remove("townHouse3")
                     .apply()
-
             }
         }
     }
 
-    fun setTownHouseInfo(townHouseId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
+    fun setTownHouseInfo(townHouseId: Int,
+                         priceId: Int,
+                         addressId: Int,
+                         bedroomId: Int,
+                         bathroomId: Int,
+                         imageId: Int){
         val townHouseInfo: Array<String> = resources.getStringArray(townHouseId)
 
         val price: String = townHouseInfo[0]
@@ -111,6 +118,11 @@ class TownHouseListingFragment : Fragment() {
         val bathrooms: String = townHouseInfo[3]
         val bathroomsView: TextView? = view?.findViewById(bathroomId)
         bathroomsView?.text = bathrooms
+
+        //retrieving array as a TypedArray for the image resource
+        val image: TypedArray = resources.obtainTypedArray(townHouseId)
+        val imageView: ImageView? = view?.findViewById(imageId)
+        imageView?.setImageResource(image.getResourceId(4,0))
     }
 
     fun loadCheckedTownHouse(sharedPreferences : SharedPreferences){

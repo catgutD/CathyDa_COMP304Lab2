@@ -29,8 +29,7 @@
                 <ImageView
                     android:id="@+id/imgApartment1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/apartment1" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblApartment1"
@@ -145,8 +144,7 @@
                 <ImageView
                     android:id="@+id/imgApartment2"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/apartment2" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblApartment2"
@@ -262,8 +260,7 @@
                 <ImageView
                     android:id="@+id/imgApartment3"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/apartment3" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblApartment3"

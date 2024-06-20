@@ -29,8 +29,7 @@
                 <ImageView
                     android:id="@+id/imgDetached1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/detached1" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblDetached1"
@@ -144,8 +143,7 @@
                 <ImageView
                     android:id="@+id/imgDetached2"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/detached2" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblDetached2"
@@ -261,8 +259,7 @@
                 <ImageView
                     android:id="@+id/imgDetached3"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_image_height"
-                    app:srcCompat="@drawable/detached3" />
+                    android:layout_height="@dimen/card_image_height" />
 
                 <TableLayout
                     android:id="@+id/tblDetached3"

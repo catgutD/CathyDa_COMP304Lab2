@@ -1,12 +1,14 @@
 package com.example.cathyda_comp304lab2
 
 import android.content.SharedPreferences
+import android.content.res.TypedArray
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -29,21 +31,24 @@ class SemiDetachedListingFragment : Fragment() {
             R.id.txtPrice1,
             R.id.txtAddress1,
             R.id.txtBedrooms1,
-            R.id.txtBathrooms1
+            R.id.txtBathrooms1,
+            R.id.imgSemiDetached1
         )
         setDetachedInfo(
             R.array.semi_detached_2,
             R.id.txtPrice2,
             R.id.txtAddress2,
             R.id.txtBedrooms2,
-            R.id.txtBathrooms2
+            R.id.txtBathrooms2,
+            R.id.imgSemiDetached2
         )
         setDetachedInfo(
             R.array.semi_detached_3,
             R.id.txtPrice3,
             R.id.txtAddress3,
             R.id.txtBedrooms3,
-            R.id.txtBathrooms3
+            R.id.txtBathrooms3,
+            R.id.imgSemiDetached3
         )
 
         val chkSemiDetached1 : CheckBox? = view?.findViewById(R.id.chbxSemiDetached1)
@@ -64,7 +69,6 @@ class SemiDetachedListingFragment : Fragment() {
             else{
                 editor.remove("semiDetached1")
                       .apply()
-
             }
         }
 
@@ -76,7 +80,6 @@ class SemiDetachedListingFragment : Fragment() {
             else{
                 editor.remove("semiDetached2")
                       .apply()
-
             }
         }
 
@@ -88,12 +91,16 @@ class SemiDetachedListingFragment : Fragment() {
             else{
                 editor.remove("semiDetached3")
                       .apply()
-
             }
         }
     }
 
-    fun setDetachedInfo(semiDetachedId: Int, priceId: Int, addressId: Int, bedroomId: Int, bathroomId: Int){
+    fun setDetachedInfo(semiDetachedId: Int,
+                        priceId: Int,
+                        addressId: Int,
+                        bedroomId: Int,
+                        bathroomId: Int,
+                        imageId: Int){
         val semiDetachedInfo: Array<String> = resources.getStringArray(semiDetachedId)
 
         val price: String = semiDetachedInfo[0]
@@ -111,6 +118,11 @@ class SemiDetachedListingFragment : Fragment() {
         val bathrooms: String = semiDetachedInfo[3]
         val bathroomsView: TextView? = view?.findViewById(bathroomId)
         bathroomsView?.text = bathrooms
+
+        //retrieving array as a TypedArray for the image resource
+        val image: TypedArray = resources.obtainTypedArray(semiDetachedId)
+        val imageView: ImageView? = view?.findViewById(imageId)
+        imageView?.setImageResource(image.getResourceId(4,0))
     }
 
     fun loadCheckedSemiDetached(sharedPreferences : SharedPreferences){
