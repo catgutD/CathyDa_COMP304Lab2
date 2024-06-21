@@ -111,10 +111,10 @@
             </TableLayout>
 
             <RadioButton
-                android:id="@+id/btnListing"
+                android:id="@+id/radioListing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select_button" />
+                android:text="@string/select_radiobutton" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -21,8 +21,15 @@
     <string name="checkbox_listing_prompt">View</string>
 
     <!--Checkout Resources-->
-    <string name="select_button">Select</string>
+    <string name="select_radiobutton">Select</string>
     <string name="proceed_button">Proceed</string>
+    
+    <!--Payment Resources-->
+    <string name="payment_prompt">Select Payment Type:</string>
+    <string name="cash_radiobutton">Cash</string>
+    <string name="credit_radiobutton">Credit Card</string>
+    <string name="debit_radiobutton">Debit Card</string>
+    <string name="pay_button">Pay</string>
 
     <!--Home Info-->
     <!--Apartment Resources-->

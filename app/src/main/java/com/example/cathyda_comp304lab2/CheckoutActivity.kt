@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +25,12 @@ class CheckoutActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = customAdapter
         prepareHomes()
+
+        val btnProceed: Button = findViewById<View>(R.id.btnProceed) as Button
+        btnProceed.setOnClickListener{
+            val intent = Intent(this, PaymentActivity::class.java)
+            startActivity(intent)
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
