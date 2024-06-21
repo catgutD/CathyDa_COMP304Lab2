@@ -32,11 +32,15 @@
     <string name="pay_button">Pay</string>
 
     <!--Card Info Resources-->
+    <string name="card_info_prompt">Enter Your Information:</string>
     <string name="fullname_text">Full Name:</string>
     <string name="card_number_text">Card/Debit Card Number:</string>
     <string name="question1_text">Favourite food:</string>
     <string name="question2_text">Favourite show:</string>
     <string name="question3_text">Favourite colour:</string>
+    <string name="empty_fullname_input_alert">Please enter your name</string>
+    <string name="empty_cardnumber_input_alert">Please enter a card number</string>
+    <string name="empty_answer_alert">Please enter an answer</string>
 
     <!--Home Info-->
     <!--Apartment Resources-->
