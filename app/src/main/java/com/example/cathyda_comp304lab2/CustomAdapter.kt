@@ -3,30 +3,36 @@ package com.example.cathyda_comp304lab2
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
+import android.icu.text.Transliterator.Position
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter(private var listingsList: List<String>, val context: Context) :
-    RecyclerView.Adapter<CustomAdapter.MyViewHolder>(){
-        class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            var listingPriceTextView: TextView = view.findViewById(R.id.txtPrice)
-            var listingAddressTextView: TextView = view.findViewById(R.id.txtAddress)
-            var listingBedroomsTextView: TextView = view.findViewById(R.id.txtBedrooms)
-            var listingBathroomsTextView: TextView = view.findViewById(R.id.txtBathrooms)
-            var listingImageView: ImageView = view.findViewById(R.id.imgListing)
+    RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
+        var radioButton: RadioButton? = null
+        class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val listingPriceTextView: TextView = view.findViewById(R.id.txtPrice)
+            val listingAddressTextView: TextView = view.findViewById(R.id.txtAddress)
+            val listingBedroomsTextView: TextView = view.findViewById(R.id.txtBedrooms)
+            val listingBathroomsTextView: TextView = view.findViewById(R.id.txtBathrooms)
+            val listingImageView: ImageView = view.findViewById(R.id.imgListing)
+            val listingRadioButton: RadioButton = view.findViewById(R.id.btnListing)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.listing, parent, false)
-            return MyViewHolder(itemView)
+            return ViewHolder(itemView)
         }
-        @SuppressLint("ResourceType")
-        override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        @SuppressLint("ResourceType", "Recycle")
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val listing = listingsList[position]
 
             val listingId: Int = context.resources.getIdentifier(listing, "array", context.packageName)
@@ -41,8 +47,19 @@ class CustomAdapter(private var listingsList: List<String>, val context: Context
             //retrieving array as a TypedArray for the image resource
             val image: TypedArray = context.resources.obtainTypedArray(listingId)
             holder.listingImageView.setImageResource(image.getResourceId(4,0))
+
+            holder.listingRadioButton.setOnClickListener{
+                if(radioButton != null){
+                    radioButton?.isChecked = false
+                }
+                holder.listingRadioButton.isChecked = true
+                radioButton = holder.listingRadioButton
+            }
+
         }
+
         override fun getItemCount(): Int {
             return listingsList.size
         }
+
     }
