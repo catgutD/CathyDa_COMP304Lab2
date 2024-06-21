@@ -1,5 +1,6 @@
 package com.example.cathyda_comp304lab2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -14,14 +15,17 @@ class PaymentActivity : AppCompatActivity() {
         val radioPayment: RadioGroup = findViewById<View>(R.id.radioPaymentType) as RadioGroup
         val btnPay: Button = findViewById<View>(R.id.btnPayment) as Button
 
-        when(radioPayment.checkedRadioButtonId){
-            R.id.radioCreditCard -> btnPay.isEnabled = true
-            R.id.radioDebitCard -> btnPay.isEnabled = true
-            else -> btnPay.isEnabled = false
+        radioPayment.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radioCreditCard -> btnPay.isEnabled = true
+                R.id.radioDebitCard -> btnPay.isEnabled = true
+                else -> btnPay.isEnabled = false
+            }
         }
 
         btnPay.setOnClickListener{
-
+            val intent = Intent(this, CardInfoActivity::class.java)
+            startActivity(intent)
         }
     }
 }

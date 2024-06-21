@@ -31,6 +31,13 @@
     <string name="debit_radiobutton">Debit Card</string>
     <string name="pay_button">Pay</string>
 
+    <!--Card Info Resources-->
+    <string name="fullname_text">Full Name:</string>
+    <string name="card_number_text">Card/Debit Card Number:</string>
+    <string name="question1_text">Favourite food:</string>
+    <string name="question2_text">Favourite show:</string>
+    <string name="question3_text">Favourite colour:</string>
+
     <!--Home Info-->
     <!--Apartment Resources-->
     <string-array name="apartment_1">
