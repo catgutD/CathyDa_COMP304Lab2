@@ -9,13 +9,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter(private var listingsList: List<String>, val context: Context) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
         var radioButton: RadioButton? = null
+        var counter: Int = 1
 
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val listingCardView: CardView = view.findViewById(R.id.cardListing)
             val listingPriceTextView: TextView = view.findViewById(R.id.txtPrice)
             val listingAddressTextView: TextView = view.findViewById(R.id.txtAddress)
             val listingBedroomsTextView: TextView = view.findViewById(R.id.txtBedrooms)
@@ -55,6 +58,20 @@ class CustomAdapter(private var listingsList: List<String>, val context: Context
                 radioButton = holder.listingRadioButton
             }
 
+            when(counter){
+                1 -> {
+                    holder.listingCardView.setCardBackgroundColor(context.resources.getColor(R.color.lightblue))
+                    counter += 1
+                }
+                2 ->{
+                    holder.listingCardView.setCardBackgroundColor(context.resources.getColor(R.color.lightgreen))
+                    counter += 1
+                }
+                3 -> {
+                    holder.listingCardView.setCardBackgroundColor(context.resources.getColor(R.color.mint))
+                    counter = 1
+                }
+            }
         }
 
         override fun getItemCount(): Int {
