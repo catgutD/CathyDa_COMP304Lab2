@@ -19,6 +19,11 @@
     <string name="bathrooms_text">Bathrooms:</string>
     <string name="checkout_text">Checkout</string>
     <string name="checkbox_listing_prompt">View</string>
+    <string name="apartment_header">Apartments</string>
+    <string name="detached_header">Detached Homes</string>
+    <string name="semi_detached_header">Semi-detached Homes</string>
+    <string name="condo_header">Condominium Apartments</string>
+    <string name="town_house_header">Town Houses</string>
 
     <!--Checkout Resources-->
     <string name="select_radiobutton">Select</string>
