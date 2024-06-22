@@ -17,6 +17,7 @@ class HomeTypesActivity : AppCompatActivity() {
         var homeType = 0
         val btnSubmit : Button = findViewById<View>(R.id.btnSubmit) as Button
 
+        radioHomeTypes.setOnCheckedChangeListener { _, checkedId -> btnSubmit.isEnabled = true }
 
         btnSubmit.setOnClickListener{
             val id = radioHomeTypes.checkedRadioButtonId

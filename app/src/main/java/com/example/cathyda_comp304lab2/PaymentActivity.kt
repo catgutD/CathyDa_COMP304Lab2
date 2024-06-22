@@ -15,17 +15,17 @@ class PaymentActivity : AppCompatActivity() {
         val radioPayment: RadioGroup = findViewById<View>(R.id.radioPaymentType) as RadioGroup
         val btnPay: Button = findViewById<View>(R.id.btnPayment) as Button
 
-        radioPayment.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.radioCreditCard -> btnPay.isEnabled = true
-                R.id.radioDebitCard -> btnPay.isEnabled = true
-                else -> btnPay.isEnabled = false
-            }
-        }
+        radioPayment.setOnCheckedChangeListener { _, checkedId -> btnPay.isEnabled = true }
 
         btnPay.setOnClickListener{
-            val intent = Intent(this, CardInfoActivity::class.java)
-            startActivity(intent)
+            if(radioPayment.checkedRadioButtonId == R.id.radioCash){
+                val intent = Intent(this, CompletionActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                val intent = Intent(this, CardInfoActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
