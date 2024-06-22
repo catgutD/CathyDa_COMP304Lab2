@@ -28,6 +28,7 @@ class CheckoutActivity : AppCompatActivity() {
 
         val btnProceed: Button = findViewById<View>(R.id.btnProceed) as Button
         btnProceed.setOnClickListener{
+
             val intent = Intent(this, PaymentActivity::class.java)
             startActivity(intent)
         }
@@ -40,7 +41,7 @@ class CheckoutActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
+        when (item.itemId) {
             R.id.apartment -> { sendHomeType(1) }
             R.id.detachedhome -> { sendHomeType(2) }
             R.id.semidetachedhome -> { sendHomeType(3) }
@@ -52,7 +53,7 @@ class CheckoutActivity : AppCompatActivity() {
 
     fun sendHomeType(homeType : Int) {
         val intent = Intent(this, AvailabilityActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, homeType)
+            putExtra(EXTRA_HOME_TYPE, homeType)
         }
         startActivity(intent)
     }

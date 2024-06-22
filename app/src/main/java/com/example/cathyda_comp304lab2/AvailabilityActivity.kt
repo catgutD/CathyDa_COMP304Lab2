@@ -15,7 +15,7 @@ class AvailabilityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_availability)
 
-        val message = intent.getIntExtra(EXTRA_MESSAGE, 0)
+        val message = intent.getIntExtra(EXTRA_HOME_TYPE, 0)
 
         when(message){
             1 -> { showFragmentListing(ApartmentListingFragment()) }
@@ -40,7 +40,7 @@ class AvailabilityActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
+        when (item.itemId) {
             R.id.apartment -> { showFragmentListing(ApartmentListingFragment()) }
             R.id.detachedhome -> { showFragmentListing(DetachedListingFragment()) }
             R.id.semidetachedhome -> { showFragmentListing(SemiDetachedListingFragment()) }

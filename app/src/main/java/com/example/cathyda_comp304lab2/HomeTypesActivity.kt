@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 
-const val EXTRA_MESSAGE ="com.android.HOMETYPE"
+const val EXTRA_HOME_TYPE = "com.android.HOMETYPE"
 class HomeTypesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +32,9 @@ class HomeTypesActivity : AppCompatActivity() {
         }
     }
 
-
     fun sendHomeType(homeType : Int) {
         val intent = Intent(this, AvailabilityActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, homeType)
+            putExtra(EXTRA_HOME_TYPE, homeType)
         }
         startActivity(intent)
     }

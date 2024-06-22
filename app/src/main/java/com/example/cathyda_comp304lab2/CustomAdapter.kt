@@ -3,6 +3,7 @@ package com.example.cathyda_comp304lab2
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,12 +51,17 @@ class CustomAdapter(private var listingsList: List<String>, val context: Context
             val image: TypedArray = context.resources.obtainTypedArray(listingId)
             holder.listingImageView.setImageResource(image.getResourceId(4,0))
 
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+            val editor = sharedPreferences.edit()
+
             holder.listingRadioButton.setOnClickListener{
                 if(radioButton != null){
                     radioButton?.isChecked = false
                 }
                 holder.listingRadioButton.isChecked = true
                 radioButton = holder.listingRadioButton
+                editor.putInt("selected", listingId)
+                    .apply()
             }
 
             when(counter){
